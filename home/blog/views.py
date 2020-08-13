@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.base import View
 from django.views.generic import ListView, TemplateView
 from django.http import HttpResponse
 from .models import Article
@@ -17,3 +18,10 @@ class ArticleList(TemplateView):
         context = super().get_context_data(**kwargs)
         context['latest_articles'] = Article.objects.all()
         return context
+
+
+class ArticleView(TemplateView):
+    template_name = "article.html"
+
+    def get(self, request, *args, **kwargs):
+        pass

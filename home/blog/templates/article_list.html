@@ -1,14 +1,15 @@
-{% include 'base.html' %}
+{% extends 'base.html' %}
 
+
+{% block title %}
+<h2>文章列表</h2>
+{% endblock %}
 
 {% block content %}
-
-{{context}}
-
 <ul>
     {% for item in latest_articles %}
     <li>
-        {{item.title}}
+        {{item.title}} {{item.id}}
     </li>
     {% endfor %}
 </ul>
