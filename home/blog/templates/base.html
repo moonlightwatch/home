@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	<div>
+			<h3>个人博客网站</h3>
+	</div>
+	{# 加一个横线用于分割页面 #}
+	<hr>
+	{% block content %}{% endblock %}
+</body>
+</html>

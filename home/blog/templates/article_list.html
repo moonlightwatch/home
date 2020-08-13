@@ -1,0 +1,16 @@
+{% include 'base.html' %}
+
+
+{% block content %}
+
+{{context}}
+
+<ul>
+    {% for item in latest_articles %}
+    <li>
+        {{item.title}}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
