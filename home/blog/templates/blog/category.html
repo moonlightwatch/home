@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'categories' %}">分类列表</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ object.name }}</li>
+        <li class="breadcrumb-item"></li>
+    </ol>
+</nav>
+{% endblock%}
+
+{% block content %}
+{% endblock %}

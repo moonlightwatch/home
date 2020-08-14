@@ -24,16 +24,16 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">文章列表</a>
+                    <a class="nav-link" href="{% url 'index' %}">主页</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">分类列表</a>
+                    <a class="nav-link" href="{% url 'categories' %}">分类列表</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">标签云</a>
+                    <a class="nav-link" href="{% url 'tags' %}">标签云</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">友情链接</a>
+                    <a class="nav-link" href="{% url 'links' %}">友情链接</a>
                 </li>
             </ul>
 
@@ -41,15 +41,20 @@
     </nav>
     <div class="container">
         <div class="row">
+            <div class="col">
+                {% block title %}
+                {% endblock %}
+            </div>
+        </div>
+        <div class="row">
             <!-- <div class="col"> </div> -->
             <div class="col-8">
-                {% block title %}
-                {% endblock%}
-
                 {% block content %}
                 {% endblock %}
             </div>
-            <div class="col-4"> </div>
+            <div class="col-4">
+
+            </div>
         </div>
 
 

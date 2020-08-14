@@ -39,6 +39,14 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
+class Link(models.Model):
+    '''
+    友链
+    '''
+    title = models.CharField(max_length=200, verbose_name='标题')
+    url = models.CharField(max_length=2048, verbose_name='地址')
+    icon_url = models.CharField(max_length=2048, verbose_name='图标地址')
+    sub_title = models.CharField(max_length=200, verbose_name='副标题')
 
 class Config(models.Model):
     '''
