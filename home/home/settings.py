@@ -25,7 +25,7 @@ SECRET_KEY = '&lbpfaim%ak32868-s4gdywert&$okmo04mv=n%(gzf-_bveie'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['moonlightwatch.com']
+ALLOWED_HOSTS = ['moonlightwatch.com', '127.0.0.1']
 
 
 # Application definition
