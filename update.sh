@@ -1,7 +1,7 @@
 
 old_hash=$(git rev-parse HEAD)
 echo $old_hash
-# git pull
+git pull
 new_hash=$(git rev-parse HEAD)
 echo $new_hash
 
