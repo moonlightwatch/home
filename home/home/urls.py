@@ -15,8 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from . import settings
-# from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from index import views
 
@@ -25,6 +24,4 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('moon-admin/', admin.site.urls),
 ]
-if not settings.DEBUG:
-    urlpatterns += [url(r'^static/(?P<path>.*)$', serve,
-                        {'document_root': settings.STATIC_ROOT})]
+urlpatterns += staticfiles_urlpatterns()
