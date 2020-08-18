@@ -13,7 +13,6 @@ else
     cd home
     python3 manage.py makemigrations
     python3 manage.py migrate
-    python3 manage.py collectstatic
     supervisorctl restart home
     echo `date` "重启服务"
 fi
