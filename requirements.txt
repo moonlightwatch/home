@@ -1,4 +1,4 @@
 django
 gunicorn
 Markdown
-mysql-python
+pymysql
