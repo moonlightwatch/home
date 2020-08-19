@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline;
+    border: 2px solid;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+}
+
+li:hover {
+    text-shadow: 5px 5px 5px #FF0000;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
