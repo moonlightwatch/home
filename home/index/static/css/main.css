@@ -2,7 +2,7 @@ body {
     text-align: center;
     color: white;
     background-color: black;
-    background-size: cover;
+    background-size: contain;
 }
 
 ul {
