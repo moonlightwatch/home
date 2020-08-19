@@ -16,8 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
 from index import views
 
 urlpatterns = [
@@ -25,4 +23,3 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('moon-admin/', admin.site.urls),
 ]
-urlpatterns += staticfiles_urlpatterns()
