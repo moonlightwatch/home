@@ -30,13 +30,11 @@ ul {
 
 li {
     display: inline;
-    border: 2px solid;
-    border-radius: 25px;
-    -moz-border-radius: 25px;
+    padding: 20px;
 }
 
 li:hover {
-    text-shadow: 5px 5px 5px #FF0000;
+    padding: 40px;
 }
 
 a {
