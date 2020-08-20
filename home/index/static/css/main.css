@@ -52,8 +52,9 @@ a {
     text-decoration: none;
 }
 
-table {
-    text-align: center;
+tbody {
+    left: auto;
+    right: auto;
 }
 
 td {
