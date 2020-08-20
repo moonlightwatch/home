@@ -48,6 +48,14 @@ a {
     text-decoration: none;
 }
 
+table {
+    width: auto;
+}
+
+td {
+    text-align: left;
+}
+
 footer {
     position: absolute;
     bottom: 0;
