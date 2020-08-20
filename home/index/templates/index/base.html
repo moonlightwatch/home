@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>MoonLightWatch-Home</title>
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+
+<body background="{% static 'images/bg.jpg' %}">
+    <div class="bg-div">
+
+    </div>
+    <div class="front-div">
+        {% block content %}
+        <footer>
+
+        </footer>
+    </div>
+
+</body>
+
+</html>

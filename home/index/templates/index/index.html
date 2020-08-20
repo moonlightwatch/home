@@ -1,40 +1,19 @@
-{% load static %}
-<!DOCTYPE html>
+{% extends 'blog/base.html' %}
 
-<html>
+{% block content %}
 
-<head>
-    <meta charset="utf-8"/>
-    <title>MoonLightWatch-Home</title>
-    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
-    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-</head>
-
-<body background="{% static 'images/bg.jpg' %}">
-    <div class="bg-div">
-
-    </div>
-    <div class="front-div">
-        <h1>MoonLightWatch</h1>
-        <ul>
-            <li>
-                <a href="/blog/">博客</a>
-            </li>
-            /
-            <li>
-                <a href="#">图书馆</a>
-            </li>
-            /
-            <li>
-                <a href="#">关于</a>
-            </li>
-        </ul>
-        <footer>
-            
-        </footer>
-    </div>
-
-</body>
-
-</html>
+<h1>MoonLightWatch</h1>
+<ul>
+    <li>
+        <a href="/blog/">博客</a>
+    </li>
+    /
+    <li>
+        <a href="#">图书馆</a>
+    </li>
+    /
+    <li>
+        <a href="/about/">关于</a>
+    </li>
+</ul>
+{% endblock %}
