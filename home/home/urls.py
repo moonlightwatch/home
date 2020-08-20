@@ -21,7 +21,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from index import views
 
 urlpatterns = [
-    path('', include('index.urls')),
+    path('/', include('index.urls')),
     path('blog/', include('blog.urls')),
     path('moon-admin/', admin.site.urls),
 ]
