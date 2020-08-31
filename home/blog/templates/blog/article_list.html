@@ -1,66 +1,51 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
-
-{% block title %}
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'index' %}">主页</a></li>
-        <li class="breadcrumb-item"></li>
-    </ol>
-</nav>
+{% block headblock %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/articlelist.css' %}">
 {% endblock %}
 
 {% block content %}
 
 {% for item in page_obj %}
-<div class="card">
-    <div class="card-body">
-        <a href="/blog/article/{{ item.id }}">
-            <h3 class="card-title">{{item.title}}</h3>
-        </a>
-        <span>📁 <a href="{% url 'category' item.category.id %}">{{ item.category }}</a></span> |
-        <span>📅 {{ item.create_time | date }}</span> |
-        {% for tag in item.tags.all %}
-        <span class="badge badge-light">🏷 {{ tag }}</span>
-        {% endfor %}
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-            card's content.</p>
-    </div>
-</div>
 
+<div class="article-area">
+    <a href="/blog/article/{{ item.id }}">
+        <h3 class="article-title">{{item.title}}</h3>
+    </a>
+    <span>📁 <a href="{% url 'category' item.category.id %}">{{ item.category }}</a></span> |
+    <span>📅 {{ item.create_time | date }}</span> |
+    {% for tag in item.tags.all %}
+    <span class="badge badge-light">🔖{{ tag }}</span>
+    {% endfor %}
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+        card's content.</p>
+</div>
 <br>
 
 {% endfor %}
 
-<nav>
-    <ul class="pagination justify-content-center">
-        {% if page_obj.has_previous %}
-        <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">上一页</a>
-            {% else %}
-        <li class="page-item disabled">
-            <a class="page-link" href="#">上一页</a>
-            {% endif %}
-        </li>
-        {% for n in page_obj.paginator.page_range %}
+<ul class="page-ul">
+    {% if page_obj.has_previous %}
+    <li>
+        <a href="?page={{ page_obj.previous_page_number }}">上一页</a>
+    </li>
+    {% endif %}
 
-        {% if n ==  page_obj.number%}
-        <li class="page-item active"><a class="page-link" href="?page={{ n }}">{{n}}</a></li>
-        {% else %}
-        <li class="page-item"><a class="page-link" href="?page={{ n }}">{{n}}</a></li>
-        {% endif %}
+    {% for n in page_obj.paginator.page_range %}
+    {% if n ==  page_obj.number%}
+    <li style="background-color: rgba(255, 255, 255, 0.3);"><a href="#"></a>{{n}}</a></li>
+    {% else %}
+    <li><a href="?page={{ n }}">{{n}}</a></li>
+    {% endif %}
+    {% endfor %}
 
-        {% endfor %}
+    {% if page_obj.has_next %}
+    <li>
+        <a href="?page={{page_obj.next_page_number}}">下一页</a> </li>
+    {% endif %}
 
-        {% if page_obj.has_next %}
-        <li class="page-item">
-            <a class="page-link" href="?page={{page_obj.next_page_number}}">下一页</a>
-            {% else %}
-        <li class="page-item disabled">
-            <a class="page-link" href="#">下一页</a>
-            {% endif %}
-        </li>
-    </ul>
-</nav>
+
+</ul>
 
 {% endblock %}

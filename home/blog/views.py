@@ -10,11 +10,6 @@ from .models import Article, Tag, Category,Link
 def index(request):
     return HttpResponseRedirect(redirect_to="/blog/articles/")
 
-
-class BlogIndex(TemplateView):
-    template_name = "blog/index.html"
-
-
 class ArticleList(ListView):
     template_name = "blog/article_list.html"
     model = Article
