@@ -10,10 +10,9 @@
 {% for item in page_obj %}
 
 <div class="article-area">
-    <a href="/blog/article/{{ item.id }}">
-        <h3 class="article-title">{{item.title}}</h3>
-    </a>
-    <span>📁 <a href="{% url 'category' item.category.id %}">{{ item.category }}</a></span> |
+
+    <h1><a class="article-title" href="/blog/article/{{ item.id }}">{{item.title}}</a></h1>
+    <span>📁 <a class="article-category" href="{% url 'category' item.category.id %}">{{ item.category }}</a></span> |
     <span>📅 {{ item.create_time | date }}</span> |
     {% for tag in item.tags.all %}
     <span class="badge badge-light">🔖{{ tag }}</span>
