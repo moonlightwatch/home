@@ -29,3 +29,8 @@ article {
 .article-footer {
     color: black;
 }
+
+a:hover {
+    color: turquoise;
+    text-decoration-line: underline;
+}
