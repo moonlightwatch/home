@@ -10,7 +10,17 @@
     <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
-    <title>MoonLightWatch-Blog</title>
+    {% if object is None %}
+        <title>MoonLightWatch-Blog</title>
+    {% else %}
+        {% if object.name is None %}
+        <title>{{object.title}}</title>
+        {% endif %}
+        {% if object.title is None %}
+        <title>{{object.name}}</title>
+        {% endif %}
+    {% endif %}
+    
     {% block headblock %}
     {% endblock %}
 </head>

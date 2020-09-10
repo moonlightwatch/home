@@ -3,13 +3,31 @@
 
 {% block headblock %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/md.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}">
 {% endblock %}
 
 {% block content %}
 
+<div class="article-header">
+    <h1>{{object.title}}</h1>
+    <ul>
+        <li>📁 <a class="article-category" href="{% url 'category' object.category.id %}">{{ object.category }}</a> |</li>
+        <li>📅 {{ object.create_time | date }} |</li>
+        <li>{% for tag in object.tags.all %}
+            <span class="badge badge-light">🔖{{ tag }}</span>
+            {% endfor %}</li>
+    </ul>
+    <hr>
+</div>
+
+
 <article id="article-content" class="markdown-body">
 
 </article>
+<hr>
+<div class="article-footer">
+<p>Copyright © {{ object.create_time | date:"Y" }} MoonLightWatch</p>
+</div>
 <p id="md-content" hidden>{{ object.content }}</p>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>

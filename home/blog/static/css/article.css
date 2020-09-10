@@ -1,0 +1,31 @@
+article {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.main-content {
+    margin-top: 16px;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.article-header {
+    color: black;
+    text-align: center;
+}
+
+.article-header>ul {
+    list-style: none;
+}
+
+.article-header>ul>li {
+    display: inline;
+}
+
+.article-category {
+    text-decoration: none;
+}
+
+.article-footer {
+    color: black;
+}
