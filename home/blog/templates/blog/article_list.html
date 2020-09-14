@@ -33,7 +33,7 @@
 
     {% for n in page_obj.paginator.page_range %}
     {% if n ==  page_obj.number%}
-    <li style="background-color: rgba(255, 255, 255, 0.3);"><a href="#"></a>{{n}}</a></li>
+    <li style="background-color: rgba(255, 255, 255, 0.3);"><a href="#">{{n}}</a></li>
     {% else %}
     <li><a href="?page={{ n }}">{{n}}</a></li>
     {% endif %}
