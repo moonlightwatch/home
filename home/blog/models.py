@@ -12,6 +12,9 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = '文章标签'
+
 
 class Category(models.Model):
     '''
@@ -21,6 +24,9 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = '文章分类'
 
 
 class Article(models.Model):
@@ -39,6 +45,7 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
+
 class Link(models.Model):
     '''
     友链
@@ -47,6 +54,13 @@ class Link(models.Model):
     url = models.CharField(max_length=2048, verbose_name='地址')
     icon_url = models.CharField(max_length=2048, verbose_name='图标地址')
     sub_title = models.CharField(max_length=200, verbose_name='副标题')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = '友情链接'
+
 
 class Config(models.Model):
     '''
@@ -57,3 +71,6 @@ class Config(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = '配置'
