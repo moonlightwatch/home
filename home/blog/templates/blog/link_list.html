@@ -1,12 +1,29 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
+{% block headblock %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/blog/links.css' %}">
+{% endblock %}
 
 {% block content %}
 
-<article>
-    {% for item in object_list %}
-    <p>{{ item.name }}</p>
-    {% endfor %}
-</article>
+
+{% for item in object_list %}
+
+<table>
+    <tr>
+        <td rowspan="2"><img class="link-icon" src="{{ itme.icon_url }}"></td>
+        <td><a class="link-a" href="{{ item.url }}" target="_blank">
+                <span>{{ item.title }}</span>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td><i class="link-sub">{{ item.sub_title }}</i></td>
+    </tr>
+</table>
+<!-- <p>{{ item.name }}</p> -->
+{% endfor %}
+
 
 {% endblock %}

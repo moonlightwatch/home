@@ -1,0 +1,29 @@
+
+.link-icon{
+    width: 64px;
+    height: 64px;
+}
+
+.link-a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 16px;
+}
+
+.link-a:hover{
+    color: turquoise;
+    text-decoration-line: underline;
+}
+
+.link-a > span{
+    font-size: 24px;
+}
+
+.link-sub{
+    padding: 16px;
+}
+
+table{
+    background-color: rgba(255,255,255,0.5);
+}

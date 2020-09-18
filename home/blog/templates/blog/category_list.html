@@ -3,10 +3,12 @@
 
 {% block content %}
 
-<article>
-    {% for item in object_list %}
-    <p>{{ item.name }}</p>
-    {% endfor %}
-</article>
+
+{% for item in object_list %}
+<a href="{% url 'category' item.id %}">
+    <h3>{{ item.name }}</h3>
+</a>
+{% endfor %}
+
 
 {% endblock %}
