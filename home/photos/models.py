@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db import models
-from django.http.response import HttpResponse
+from django.utils.html import format_html
 # Create your models here.
 
 
@@ -11,7 +11,7 @@ class Photo(models.Model):
 
     def 预览(self):
         html = f'<img src="{self.image.url}" height="96px">'
-        return HttpResponse(content=html)
+        return format_html(html)
 
     def __str__(self):
         return self.name
@@ -20,4 +20,4 @@ class Photo(models.Model):
         verbose_name_plural = '照片集'
 
 class PhotoAdmin(admin.ModelAdmin):
-    list_display = ('name', 'create_time', 'image')
+    list_display = ('name', 'create_time', '预览')
