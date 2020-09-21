@@ -20,4 +20,5 @@ class Photo(models.Model):
         verbose_name_plural = '照片集'
 
 class PhotoAdmin(admin.ModelAdmin):
+    fields = ('name', 'image', 'create_time', '预览')
     list_display = ('name', 'create_time', '预览')
