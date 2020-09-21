@@ -21,9 +21,4 @@ class Photo(models.Model):
 
 
 class PhotoAdmin(admin.ModelAdmin):
-    fields = ('name', 'image', 'create_time', '预览')
     list_display = ('name', 'create_time', '预览')
-
-    def 预览(self, obj):
-        html = f'<img src="{obj.image.url}" height="96px">'
-        return format_html(html)
