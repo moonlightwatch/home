@@ -1,3 +1,4 @@
+from django.contrib import admin
 from django.db import models
 from django.http.response import HttpResponse
 # Create your models here.
@@ -17,3 +18,6 @@ class Photo(models.Model):
 
     class Meta:
         verbose_name_plural = '照片集'
+
+class PhotoAdmin(admin.ModelAdmin):
+    list_display = ('name', 'create_time', 'image')
