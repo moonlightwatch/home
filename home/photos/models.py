@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.http.response import HttpResponse
 # Create your models here.
 
 
@@ -7,6 +7,10 @@ class Photo(models.Model):
     image = models.ImageField(upload_to='images/', verbose_name='照片')
     name = models.TextField(verbose_name='照片名')
     create_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+
+    def 预览(self):
+        html = f'<img src="{self.image.url}" height="96px">'
+        return HttpResponse(content=html)
 
     def __str__(self):
         return self.name
