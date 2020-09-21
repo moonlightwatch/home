@@ -12,6 +12,10 @@ class Photo(models.Model):
     def 预览(self):
         html = f'<img src="{self.image.url}" height="96px">'
         return format_html(html)
+    
+    def url(self):
+        return self.image.url
+        
 
     def __str__(self):
         return self.name
@@ -21,4 +25,4 @@ class Photo(models.Model):
 
 
 class PhotoAdmin(admin.ModelAdmin):
-    list_display = ('name', 'create_time', '预览')
+    list_display = ('name', 'create_time', '预览', 'url')
