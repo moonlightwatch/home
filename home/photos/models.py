@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 
-class Photo():
+class Photo(models.Model):
     image = models.ImageField(upload_to='images/', verbose_name='照片')
     name = models.TextField(verbose_name='照片名')
     create_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
