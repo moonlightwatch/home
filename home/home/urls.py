@@ -25,6 +25,7 @@ urlpatterns = [
     # path('about/', views.AboutView.as_view(), name="about"),
     path('', include("index.urls")),
     path('blog/', include('blog.urls')),
+    path('photos/',include('photos.urls') )
     path('moon-admin/', admin.site.urls),
 ]
 urlpatterns += staticfiles_urlpatterns()
