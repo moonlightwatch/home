@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib import admin
 # Create your models here.
 
 
@@ -44,9 +44,13 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
-    
+
     class Meta:
         verbose_name_plural = '博客文章'
+
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ('title', 'category', 'create_time', 'is_draft')
+
 
 
 class Link(models.Model):
@@ -65,6 +69,10 @@ class Link(models.Model):
         verbose_name_plural = '友情链接'
 
 
+class LinkAdmin(admin.ModelAdmin):
+    list_display = ('title', 'url', 'sub_title', 'icon_url')
+
+
 class Config(models.Model):
     '''
     配置
@@ -77,3 +85,7 @@ class Config(models.Model):
 
     class Meta:
         verbose_name_plural = '配置'
+
+
+class ConfigAdmin(admin.ModelAdmin):
+    list_display = ('name', 'value')
