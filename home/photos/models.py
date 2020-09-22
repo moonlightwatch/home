@@ -26,4 +26,4 @@ class Photo(models.Model):
 
 
 class PhotoAdmin(admin.ModelAdmin):
-    list_display = ('name', 'create_time', '预览', 'url')
+    list_display = ('name', 'create_time', '预览', 'markdown')
