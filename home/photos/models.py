@@ -1,4 +1,3 @@
-from django.contrib import admin
 from django.db import models
 from django.utils.html import format_html
 import urllib
@@ -23,7 +22,3 @@ class Photo(models.Model):
 
     class Meta:
         verbose_name_plural = '照片集'
-
-
-class PhotoAdmin(admin.ModelAdmin):
-    list_display = ('name', 'create_time', '预览', 'markdown')
