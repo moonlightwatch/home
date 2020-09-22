@@ -5,16 +5,10 @@
     text-decoration: none;
 }
 
-a:hover {
-    color: turquoise;
-    text-decoration-line: underline;
-}
-
 .article-category {
     color: white;
     text-decoration: none;
 }
-
 
 .page-ul {
     list-style: none;
@@ -34,4 +28,9 @@ a:hover {
     padding: 6px;
     color: white;
     text-decoration: none;
+}
+
+a:hover {
+    color: turquoise;
+    text-decoration-line: underline;
 }
