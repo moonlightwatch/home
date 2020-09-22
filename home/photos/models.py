@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.db import models
 from django.utils.html import format_html
+import urllib
 # Create your models here.
 
 
@@ -12,10 +13,10 @@ class Photo(models.Model):
     def 预览(self):
         html = f'<img src="{self.image.url}" height="96px">'
         return format_html(html)
-    
-    def url(self):
-        return self.image.url
-        
+
+    def markdown(self):
+        url = urllib.parse.unquote(self.image.url)
+        return f"![{self.name}]({url})"
 
     def __str__(self):
         return self.name
