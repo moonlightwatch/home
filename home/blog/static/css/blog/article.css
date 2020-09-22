@@ -34,3 +34,7 @@ a:hover {
     color: turquoise;
     text-decoration-line: underline;
 }
+
+img {
+    display: block;
+}
