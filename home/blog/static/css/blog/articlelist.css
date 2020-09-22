@@ -32,4 +32,6 @@ a:hover {
 .page-ul>li>a {
     display: inline-block;
     padding: 6px;
+    color: white;
+    text-decoration: none;
 }
