@@ -29,21 +29,10 @@
 <div class="article-footer">
     <p>Copyright © {{ object.create_time | date:"Y" }} MoonLightWatch</p>
 </div>
-<p id="md-content" hidden>{{ object.content }}</p>
+<script id="md-content" hidden>{{ object.content }}</script>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
-    var rendererMD = new marked.Renderer();
-    marked.setOptions({
-        renderer: rendererMD,
-        gfm: true,
-        tables: true,
-        breaks: false,
-        pedantic: false,
-        sanitize: false,
-        smartLists: true,
-        smartypants: false
-    });//基本设置
     document.getElementById("article-content").innerHTML = marked(document.getElementById("md-content").innerText);
 </script>
 {% endblock %}
