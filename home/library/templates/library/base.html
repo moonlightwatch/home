@@ -1,0 +1,50 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/blog/blog.css' %}">
+    {% if object is None %}
+        <title>MoonLightWatch-Blog</title>
+    {% else %}
+        {% if object.name is None %}
+        <title>{{object.title}}</title>
+        {% endif %}
+        {% if object.title is None %}
+        <title>{{object.name}}</title>
+        {% endif %}
+    {% endif %}
+    
+    {% block headblock %}
+    {% endblock %}
+</head>
+
+<body background="{% static 'images/bg.webp' %}">
+    <div class="bg-div">
+
+    </div>
+    <ul class="nav-ul">
+        <li>
+            <a class="nav-link" href="/">主页</a>
+        </li>
+        <li>
+            <a class="nav-link" href="/library/">书籍列表</a>
+        </li>
+        <li>
+            <a class="nav-link" href="/library/categories">书籍分类</a>
+        </li>
+
+    </ul>
+    <div class="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>
