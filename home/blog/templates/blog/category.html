@@ -3,7 +3,20 @@
 
 {% block content %}
 
-<h1>{{ object.name }}</h1>
+<h1>{{ object.category.name }}</h1>
 
+{% for item in object.articles %}
+
+<div class="article-area">
+
+    <span><a class="article-title" href="/blog/article/{{ item.id }}">{{item.title}}</a></span> |
+    <span>📅 {{ item.create_time | date }}</span> |
+    {% for tag in item.tags.all %}
+    <span class="badge badge-light">🔖{{ tag }}</span>
+    {% endfor %}
+</div>
+<br>
+
+{% endfor %}
 
 {% endblock %}

@@ -17,7 +17,6 @@ class ArticleList(ListView):
     paginate_by = 10
 
     def get_queryset(self):  # 重写get_queryset方法
-        # 获取所有is_deleted为False的用户，并且以时间倒序返回数据
         return Article.objects.filter(is_draft=False).order_by('-create_time')
 
 
@@ -44,6 +43,15 @@ class CategoryList(ListView):
 class CategoryDetail(DetailView):
     template_name = "blog/category.html"
     model = Category
+
+    def get_object(self):
+        pk = self.kwargs.get(self.pk_url_kwarg)
+        queryset = Category.objects.filter(pk=pk)
+        obj = {}
+        obj["category"] = queryset.get()
+        obj["articles"] = Article.objects.filter(
+            is_draft=False, category=obj["category"].id).order_by('-create_time')
+        return obj
 
 
 class LinkList(ListView):
