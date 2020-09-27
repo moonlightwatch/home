@@ -27,6 +27,7 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('photos/', include('photos.urls')),
     path('library/', include('library.urls')),
+    path('toolbox/', include('toolbox.urls')),
     path('moon-admin/', admin.site.urls),
 ]
 urlpatterns += staticfiles_urlpatterns()
