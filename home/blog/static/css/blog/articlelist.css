@@ -3,6 +3,7 @@
 .article-title {
     color: white;
     text-decoration: none;
+    width: auto;
 }
 
 .article-category {
@@ -30,7 +31,11 @@
     text-decoration: none;
 }
 
-a:hover .page-ul>li>a {
+a:hover {
     color: turquoise;
     text-decoration-line: underline;
+}
+
+h1{
+    margin-top: 64px;
 }
