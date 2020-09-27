@@ -1,4 +1,4 @@
-{% extends 'blog/base.html' %}
+{% extends 'library/base.html' %}
 
 
 {% block content %}
@@ -19,7 +19,8 @@
 <a href="{% url 'category' item.id %}">
     <h2>{{ item.name }}</h2>
 </a>
-{% endfor %}
 
+{% endfor %}
+<p> 正在施工…… </p>
 
 {% endblock %}
