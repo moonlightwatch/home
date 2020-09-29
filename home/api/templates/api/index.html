@@ -1,0 +1,19 @@
+<button onclick="click_function();">搞起
+</button>
+
+<script>
+    function click_function() {
+        function reqListener() {
+            console.log(this.responseText);
+        }
+        var oReq = new XMLHttpRequest();
+        oReq.addEventListener("load", reqListener);
+        oReq.open("POST", "/api/makekeywords/");
+        oReq.setRequestHeader("X-CSRFToken", "8YCqFz746QTzhh5dAiKuAXhciTk2XtfixAT3uAn7hplHPL7eVhmz9xQ0l9ubfiBd");
+        oReq.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
+
+        let a = JSON.stringify({ "text": "八百标兵奔北坡" });
+        console.log(a);
+        oReq.send(a);
+    }
+</script>

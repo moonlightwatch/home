@@ -2,3 +2,5 @@ django
 gunicorn
 Markdown
 mysqlclient
+jieba
+textrank4zh
